@@ -1,0 +1,35 @@
+
+.RenderDiv{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.MainDiv{
+ display: flex;
+ flex:1;
+ padding: 30px;
+ justify-content: center;
+
+ align-items: center;
+}
+.Form{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 40px;
+
+}
+.Textfiell{
+    margin: 20px;
+}
+.MuiFormControl-root{
+    margin: 20px !important;
+}
+
