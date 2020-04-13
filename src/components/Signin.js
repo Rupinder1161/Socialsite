@@ -53,7 +53,7 @@ export class Signin extends Component {
         super(props)
     
         this.state = {
-             email:"",
+             email:data,
              password:data[0].title,
              submit:'',
              email:[],
@@ -121,7 +121,7 @@ export class Signin extends Component {
                                                        </Route>
                                                        
                                                                      <Route path="/users">
-                                                                     <WelcomePage Email={this.state.password} />
+                                                                     <WelcomePage Email={this.state.password} fulldata={data} />
                                                                      </Route>
                                                      
                                                       <Route path="/">

@@ -35,9 +35,9 @@ const Welcome = (props) =>{
         
         
         
-                                     <Todo email={props.email}/>
+                                     <Todo email={props.email} fulldatatodo={props.da}/>
                                      
-          <div className="Welcomethree">ee</div>
+          {/* <div className="Welcomethree">ee</div> */}
         </div>
     )
              
@@ -52,12 +52,12 @@ export class WelcomePage extends Component {
              
         }
     }
-    
+
     render() {
-        // console.log(this.props.data)
+        console.log(this.props.fulldata)
         return (
             <div className="WelcomeMainDiv">
-                <Welcome email={this.props.Email}/>
+                <Welcome email={this.props.Email} da={this.props.fulldata}/>
             </div> 
         )
     }

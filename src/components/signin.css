@@ -52,6 +52,6 @@ ul{
 }
 li{
     
-    display: inline-block;
-    color: red;
+    /* display: inline-block;
+    color: red; */
 }
