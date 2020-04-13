@@ -1,0 +1,60 @@
+.WelcomeMainDiv{
+    display: flex;
+    width:100%;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    
+}
+.Welcomeone{
+    width:33%; 
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    min-width: 400px;
+    border:1px solid green;
+    text-align: center;
+    text-justify: inter-word;
+    word-wrap: break-word;
+    padding: 5px;
+}
+
+.Welcometwo{
+    /* margin-top: 20px; */
+    padding-top: 10px;
+    display: flex;
+    padding: 10px;
+    /* margin: 10px; */
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    
+    min-width: 400px;
+    margin-top: 20px;
+}
+.Welcomethree{
+    width:33%; 
+    margin-top: 20px;
+    background-color: yellow;
+    min-width: 400px;
+}
+
+.Welcomeone > section{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+/* post */
+
+.input{
+    width: 100%;
+}
+.inputButton{
+    width: 100%;
+    background-color:#5D5A58;
+}
+/* post */

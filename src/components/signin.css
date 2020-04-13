@@ -33,3 +33,25 @@
     margin: 20px !important;
 }
 
+.Navbar{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+ul{
+    margin: 10px;
+    color: cornsilk;
+    text-decoration: none;
+    color: cornsilk;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+li{
+    
+    display: inline-block;
+    color: red;
+}

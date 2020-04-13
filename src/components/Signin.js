@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import WelcomePage from './WelcomePage'
+import WelcomePage from './WelcomePage';
 import {
     BrowserRouter as Router,
     Switch,
@@ -31,6 +31,22 @@ import './signin.css'
      )
  }
 
+
+ const NoMatchPage = () => {
+    return (
+      <h3>404 - Not found</h3>
+    );
+  };
+
+
+ const  data = [
+     { title:" ddhjdjdfhjkf",time:"2040",completed:true},
+     { title:" ddhjdjdfhjkf",time:"2040",completed:true},
+     { title:" ddhjdjdfhjkf",time:"2040",completed:true},
+     { title:" ddhjdjdfhjkf",time:"2040",completed:true},
+     { title:" ddhjdjdfhjkf",time:"2040",completed:true},
+
+ ]
 export class Signin extends Component {
 
     constructor(props) {
@@ -38,7 +54,7 @@ export class Signin extends Component {
     
         this.state = {
              email:"",
-             password:"",
+             password:data[0].title,
              submit:'',
              email:[],
 
@@ -71,7 +87,7 @@ export class Signin extends Component {
         var password = this.state.password;
         if( email !== "" && password !== " "){
                   console.log(email + " " + password)
-                  window.location = '/gurpreet';
+                  window.location = '/about';
         }
         else{
             alert("your email is not valid")
@@ -81,14 +97,56 @@ export class Signin extends Component {
 
 
     render() {
+
+        console.log(data[0].title)
         return (
-            <div className="RenderDiv">
-                <Header/>
-                <SignInForm Email={this.state.email} password={this.state.password} method = {this.senddata} onChangeEmai={this.onChangeEmail} onChangePasswor={this.onChangePassword}/>
-                <WelcomePage Email={this.state.email}/>
-            </div>
+               <Router>
+                   
+                     <div>
+                                  <nav style={style}>
+                                    
+                                        <Link style={{color:"white",textDecoration:"none"}} to="/">Home</Link>
+                                      
+                                        <Link style={{color:"white",textDecoration:"none"}}  to="/about">About</Link>
+                                      
+                                        <Link style={{color:"white",textDecoration:"none"}}  to="/users">Users</Link>      
+                                  </nav>
+           
+                   
+                                  <div className="RenderDiv">
+                                         <Switch>
+                                                       <Route path="/about">
+                                                       <Header/>
+                                                       <SignInForm Email={this.state.email} password={this.state.password} method = {this.senddata} onChangeEmai={this.onChangeEmail} onChangePasswor={this.onChangePassword}/>  
+                                                       </Route>
+                                                       
+                                                                     <Route path="/users">
+                                                                     <WelcomePage Email={this.state.password} />
+                                                                     </Route>
+                                                     
+                                                      <Route path="/">
+                                                       <Header/>
+                                                       <SignInForm Email={this.state.email} password={this.state.password} method = {this.senddata} onChangeEmai={this.onChangeEmail} onChangePasswor={this.onChangePassword}/>        
+                                                       </Route>
+                                                    
+                                                     <Route component={NoMatchPage} />
+                                         </Switch>
+                                         
+                                    </div>
+                          </div>
+    </Router>
+            
         )
     }
 }
-
+const style = {
+    width:"100%",
+    padding:"10px",
+    display:"flex",
+    flexFlow:"row wrap",
+    justifyContent:"space-evenly",
+    alignItem:"center",
+    color:"white",
+    backgroundColor:"black"
+   }
 export default Signin
